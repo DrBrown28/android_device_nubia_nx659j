@@ -44,6 +44,7 @@ def OTA_InstallEnd(info):
   info.script.Print("Patching vbmeta...")
   AddImage(info, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
 
+  AddImageRadio(info, "abl.elf", "/dev/block/bootdevice/by-name/abl")
   AddImageRadio(info, "aop.mbn", "/dev/block/bootdevice/by-name/aop");
   AddImageRadio(info, "BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
   AddImageRadio(info, "cmnlib64.mbn", "/dev/block/bootdevice/by-name/cmnlib64");
@@ -52,6 +53,7 @@ def OTA_InstallEnd(info):
   AddImageRadio(info, "dspso.bin", "/dev/block/bootdevice/by-name/dsp");
   AddImageRadio(info, "hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
   AddImageRadio(info, "imagefv.elf", "/dev/block/bootdevice/by-name/ImageFv");
+  AddImageRadio(info, "km4.mbn", "/dev/block/bootdevice/by-name/keymaster")
   AddImageRadio(info, "multi_image.mbn", "/dev/block/bootdevice/by-name/multiimgoem");
   AddImageRadio(info, "NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
   AddImageRadio(info, "parameter.img", "/dev/block/bootdevice/by-name/parameter");
