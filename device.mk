@@ -25,10 +25,10 @@ $(call inherit-product, vendor/nubia/nx659j/nx659j-vendor.mk)
 
 # Inherit display makefiles
 $(call inherit-product, hardware/qcom-caf/sm8250/display/config/display-board.mk)
-
+ 
 -include $(LOCAL_PATH)/properties.mk
-
-# Shipping API level
+ 
+ # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
 # ANT+
@@ -97,10 +97,6 @@ PRODUCT_PACKAGES += \
     libcomparetf2 \
     libpng.vendor \
     libprotobuf-cpp-full-vendorcompat
-
-# config.fs
-PRODUCT_PACKAGES += \
-    fs_config_files
 
 # ConfigStore
 PRODUCT_PACKAGES += \
