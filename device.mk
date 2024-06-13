@@ -52,11 +52,12 @@ PRODUCT_PACKAGES += \
     libexthwplugin \
     libhdmiedid \
     libhfp \
+    libprocessgroup.vendor \
+    libsndmonitor \
+    libspkrprot \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libsndmonitor \
-    libspkrprot \
     libssrec \
     libvolumelistener
 
@@ -92,7 +93,10 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     libcamera2ndk_vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
+    vendor.qti.hardware.camera.postproc@1.0.vendor \
+    libcomparetf2 \
+    libpng.vendor \
+    libprotobuf-cpp-full-vendorcompat
 
 # config.fs
 PRODUCT_PACKAGES += \
@@ -354,6 +358,8 @@ PRODUCT_COPY_FILES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
+    libcurl.vendor:64 \
+    libjsoncpp.vendor \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti.vendor
@@ -365,7 +371,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.6.vendor \
     android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio.deprecated@1.0.vendor
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
+    CarrierConfigOverlay \
+    libsqlite.vendor:64
 
 # Ramdisk
 PRODUCT_PACKAGES += \
