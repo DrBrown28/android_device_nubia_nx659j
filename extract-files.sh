@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2020 The LineageOS Project
+# SPDX-FileCopyrightText: 2016 The CyanogenMod Project
+# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -45,7 +46,8 @@ while [ "${#}" -gt 0 ]; do
                 KANG="--kang"
                 ;;
         -s | --section )
-                SECTION="${2}"; shift
+                SECTION="${2}"
+                shift
                 CLEAN_VENDOR=false
                 ;;
         * )
@@ -61,21 +63,38 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        vendor/bin/dspservice | vendor/bin/vppservice | vendor/lib64/lib-imsrcs-v2.so | vendor/lib/libOmxVpp.so | vendor/lib/libvppclient.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --remove-needed "libhwbinder.so" "${2}"
+            ;;
+        vendor/lib64/hw/camera.qcom.so)
+            [ "$2" = "" ] && return 0
+            sed -i "s|libc++.so|libc28.so|g" "${2}"
+            sed -i "s|libqdMetaData.so|libcomparetf2.so|" "${2}"
+            sed -i 's|libsnsapi.so|libsnsv28.so|g' "${2}"
+        *)
+            return 1
+            ;;
+    esac
 
     vendor/etc/sensors/hals.conf)
-        sed -i "/ffbm.sensors.oem.so/d" "${2}"
-        ;;
+         sed -i "/ffbm.sensors.oem.so/d" "${2}"
+         ;;
+ 
+     # Change soname for fingerprint.default.so
+     vendor/lib/hw/fingerprint.goodix_fod.default.so | vendor/lib64/hw/fingerprint.goodix_fod.default.so)
+         "${PATCHELF}" --set-soname "fingerprint.goodix_fod.default.so" "${2}"
+         "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+         ;;
+    return 0
+}
 
-    # Change soname for fingerprint.default.so
-    vendor/lib/hw/fingerprint.goodix_fod.default.so | vendor/lib64/hw/fingerprint.goodix_fod.default.so)
-        "${PATCHELF}" --set-soname "fingerprint.goodix_fod.default.so" "${2}"
-        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
-        ;;
-
-    vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
-        "${SIGSCAN}" -p "13 0A 00 94" -P "1F 20 03 D5" -f "${2}"
-        ;;
-    esac
+     vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
+         "${SIGSCAN}" -p "13 0A 00 94" -P "1F 20 03 D5" -f "${2}"
+         ;;
+     esac
+function blob_fixup_dry() {
+    blob_fixup "$1" ""
 }
 
 # Initialize the helper
