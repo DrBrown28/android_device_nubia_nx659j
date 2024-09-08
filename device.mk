@@ -210,7 +210,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
-    $(LOCAL_PATH)/media/media_codecs_kona_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_kona.xml \
     $(LOCAL_PATH)/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
     $(LOCAL_PATH)/media/media_codecs_performance_kona_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_kona.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2.xml \
@@ -229,23 +228,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
 
-# OMX
+# Codecs C2
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libcodec2_hidl@1.0.vendor \
     libcodec2_vndk.vendor \
-    libmm-omxcore \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc \
-    libOmxVidcCommon \
-    libplatformconfig \
-    libstagefrighthw
+    libplatformconfig
 
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -391,12 +379,9 @@ PRODUCT_PACKAGES += \
     init.nubia.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
+    init.qti.media.sh \
     init.target.rc \
     ueventd.qcom.rc
-
-# Seccomp policy
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
 # Sensors
 PRODUCT_PACKAGES += \
