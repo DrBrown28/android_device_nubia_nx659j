@@ -9,4 +9,8 @@
 
     <!-- The padding on the bottom of the notifications on the keyguard -->
     <dimen name="keyguard_indication_bottom_padding">150px</dimen>
+    
+    <!-- the padding on the start of the statusbar -->
+    <dimen name="status_bar_padding_start">60px</dimen>
+    
 </resources>
