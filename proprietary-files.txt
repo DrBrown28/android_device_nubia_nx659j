@@ -904,7 +904,7 @@ vendor/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/bin/garden_app
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti
 vendor/bin/loc_launcher
-vendor/bin/lowi-server;DISABLE_CHECKELF
+vendor/bin/lowi-server
 vendor/bin/mlid
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
