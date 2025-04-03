@@ -26,11 +26,11 @@ import android.provider.Settings;
 import android.widget.CompoundButton;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 import androidx.preference.SeekBarPreference;
 import androidx.preference.DropDownPreference;
 
-import com.android.settingslib.widget.MainSwitchPreference;
+import com.android.settingslib.widget.MainSwitchPreferenceCompat;
 
 import org.lineageos.settings.R;
 
@@ -52,7 +52,7 @@ public class FanFragment extends PreferenceFragment implements
     private static final int FAN_MIN_VALUE = 1;
     private static final int FAN_MAX_VALUE = 5;
 
-    private MainSwitchPreference mSwitchBar;
+    private MainSwitchPreferenceCompat mSwitchBar;
     private DropDownPreference mFanControlMode;
     private SeekBarPreference mFanManualBar;
 
@@ -63,7 +63,7 @@ public class FanFragment extends PreferenceFragment implements
         int fanModeValue;
         addPreferencesFromResource(R.xml.fan);
 
-        mSwitchBar = (MainSwitchPreference) findPreference(KEY_FAN_ENABLE);
+        mSwitchBar = (MainSwitchPreferenceCompat) findPreference(KEY_FAN_ENABLE);
         mSwitchBar.setChecked(SettingsUtils.getEnabled(getActivity(), KEY_FAN_ENABLE));
         mSwitchBar.addOnSwitchChangeListener(this);
 
