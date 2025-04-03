@@ -92,9 +92,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service_64 \
     android.frameworks.sensorservice@1.0.vendor \
     libcamera2ndk_vendor \
+    libgui_vendor \
+    libstdc++_vendor \
+    libutilscallstack.vendor \     
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor \
-    libcomparetf2 \
     libpng.vendor \
     libprotobuf-cpp-full-vendorcompat
 
@@ -369,7 +371,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.2.vendor \
-    CarrierConfigOverlay \
     libsqlite.vendor:64
 
 # Ramdisk
@@ -469,4 +470,6 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
+    libnl \
+    libpng.vendor \
     libwfdaac_vendor
