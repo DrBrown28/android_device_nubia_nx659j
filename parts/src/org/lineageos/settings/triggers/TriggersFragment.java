@@ -26,7 +26,7 @@ import android.provider.Settings;
 import android.widget.Switch;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.SwitchPreference;
 
 import org.lineageos.settings.R;
 
@@ -43,7 +43,7 @@ public class TriggersFragment extends PreferenceFragment implements SharedPrefer
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.triggers);
         mPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        final SwitchPreferenceCompat triggersDisable = (SwitchPreferenceCompat) findPreference(KEY_TRIGGERS_DISABLE);
+        final SwitchPreference triggersDisable = (SwitchPreference) findPreference(KEY_TRIGGERS_DISABLE);
         triggersDisable.setChecked(mPrefs.getBoolean(KEY_TRIGGERS_DISABLE, true));
     }
 

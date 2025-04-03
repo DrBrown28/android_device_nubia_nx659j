@@ -19,7 +19,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/fan_control_title">
 
-    <com.android.settingslib.widget.MainSwitchPreferenceCompat
+    <com.android.settingslib.widget.MainSwitchPreference
         android:defaultValue="false"
         android:key="fan_control_enable"
         android:title="@string/fan_control_enable_title" />
