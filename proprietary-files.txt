@@ -753,8 +753,8 @@ vendor/bin/ipacm-diag
 vendor/bin/netmgrd
 vendor/bin/port-bridge
 vendor/bin/qti
-vendor/etc/data/dsi_config.xml
-vendor/etc/data/netmgr_config.xml
+vendor/etc/data/dsi_config.xml;FIX_XML|ea7b7d04befce64d273919fdfb2eee1adb0ebe9c|af970c55a0e16a1bb2c98df47ffc358ed774b240
+vendor/etc/data/netmgr_config.xml;FIX_XML|ce172471828f44512b6eec207b3dfe791da8d62a|be6da9590212c09e71ae7cb912746d5e56efe09e
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dataqti.rc
 vendor/etc/init/ipa_fws.rc
@@ -848,7 +848,7 @@ vendor/lib64/vendor.display.color@1.5.so|2816ad7ee01408a8a91f14307a8b29e1c370ab4
 vendor/lib64/vendor.display.postproc@1.0.so|b3c3811c5f07773ef156701c31c448b85ad60c64
 
 # DSP service
-vendor/bin/dspservice
+vendor/bin/dspservice|225fc63f14387ea978341f9418b34900c1b10ce2|45e84157ade80e292677a8ae281e87c8d76f5bd4
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/lib/vendor.qti.hardware.dsp@1.0.so
@@ -1038,7 +1038,7 @@ vendor/firmware/a650_zap.mdt
 # IMS
 system_ext//lib64/lib-imsvt.so
 system_ext//lib64/lib-imsvtutils.so
-system_ext/lib64/lib-imsvideocodec.so
+system_ext/lib64/lib-imsvideocodec.so|32ee61c0ac47dbad187b82f0f921354a55cc51a1|be6f2a4c5f30ad4e72ebfff4dbb254eab64de10e
 system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/libdiag_system.so
 system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
@@ -1094,7 +1094,7 @@ vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
 vendor/lib64/lib-imscmservice.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
-vendor/lib64/lib-imsrcs-v2.so
+vendor/lib64/lib-imsrcs-v2.so|efb10a6271b0c7a12f7fdd53fed5890f11476eb1|5422ba01ef79f632d6d1dda714800be7b4dda04a
 vendor/lib64/lib-imsrcsbaseimpl.so
 vendor/lib64/lib-imsvtcore.so
 vendor/lib64/lib-imsxml.so
@@ -1518,7 +1518,7 @@ vendor/lib64/libsi.so
 vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 vendor/lib64/libtzdrmgenprov.so
-vendor/lib64/mediadrm/libwvdrmengine.so
+vendor/lib64/mediadrm/libwvdrmengine.so|a5cb0febcf81636577ec16cdc64005c647275afe|2688a21325d8c5335339c5ed7d22a08498835d37
 
 # Sensors
 system_ext/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
@@ -1656,10 +1656,10 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # VPP
-vendor/bin/vppservice
+vendor/bin/vppservice|5c47c89cddbbab43dafaed5b71065f086c8f2fd4|d59a2c70f9ea4f7f397de73be469dbf14d4a487b
 vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/init/vppservice.rc
-vendor/lib/libvppclient.so
+vendor/lib/libvppclient.so|6954b76f485da79fce2de9153a617f44cf84dd97|b5fb9aab651609086e108ed0303096b97964ef46
 vendor/lib/libvpphcp.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvppimmotion.so
@@ -1756,7 +1756,7 @@ vendor/lib64/android.hardware.drm-V1-ndk.so
 vendor/lib64/libdrm.so
 vendor/lib64/libdrmutils.so
 vendor/lib64/libsdedrm.so
-vendor/lib64/libwvhidl.so
+vendor/lib64/libwvhidl.so|c50a6fee3753dff0809ef2c861c1f517cfb3b2b7|2f562c121d3ef925cb64c80e15e2c61d0158b717
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 
 
