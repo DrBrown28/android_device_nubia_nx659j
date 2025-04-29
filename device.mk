@@ -35,6 +35,10 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 # Fingerprint
 $(call soong_config_set,surfaceflinger,udfps_lib,//hardware/nubia:libudfps_extension.nubia)
 
+# Lineage Health
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/qcom_battery/battery_charging_enabled)
+$(call soong_config_set,lineage_health,charging_control_supports_toggle,true)
+
 -include $(LOCAL_PATH)/properties.mk
  
  # Shipping API level
