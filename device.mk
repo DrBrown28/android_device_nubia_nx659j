@@ -32,6 +32,9 @@ $(call inherit-product, hardware/qcom-caf/sm8250/display/config/display-board.mk
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+# Fingerprint
+$(call soong_config_set,surfaceflinger,udfps_lib,//hardware/nubia:libudfps_extension.nubia)
+
 -include $(LOCAL_PATH)/properties.mk
  
  # Shipping API level
