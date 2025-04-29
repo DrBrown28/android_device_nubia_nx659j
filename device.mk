@@ -39,6 +39,9 @@ $(call soong_config_set,surfaceflinger,udfps_lib,//hardware/nubia:libudfps_exten
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/qcom_battery/battery_charging_enabled)
 $(call soong_config_set,lineage_health,charging_control_supports_toggle,true)
 
+# Init lib
+$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit.nx659j)
+
 -include $(LOCAL_PATH)/properties.mk
  
  # Shipping API level
