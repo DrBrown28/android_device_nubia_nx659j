@@ -110,17 +110,20 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/kernel/tp_node/wake_gesture"
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 TARGET_USES_FOD_ZPOS := true
 
+# Fingerprint
+#TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/nubia:libudfps_extension.nubia
+TARGET_USES_FOD_ZPOS := true
+
 # Hals
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := kona
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/framework_compatibility_matrix.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/infinity/config/device_framework_matrix.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE += hardware/qcom-caf/common/compatibility_matrix.xml
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
