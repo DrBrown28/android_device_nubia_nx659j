@@ -121,8 +121,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.privapp.list=org.codeaurora.snapcam,org.lineageos.aperture \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,org.lineageos.aperture
+   persist.vendor.camera.privapp.list=org.codeaurora.snapcam,org.lineageos.aperture \
+   vendor.camera.aux.packagelist=com.android.camera,cn.nubia.factory,org.codeaurora.snapcam
 
 # Chipset
 PRODUCT_PROPERTY_OVERRIDES += \
