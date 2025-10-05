@@ -4286,4 +4286,17 @@
 
     <path name="call-proxy-in">
     </path>
+    <!-- ===================================================== -->
+<!--  Fix para WhatsApp / Telegram (voz lejana / ruido)   -->
+<!-- ===================================================== -->
+    <path name="voice-communication-mic">
+        <!-- Forzar uso del micrófono principal inferior -->
+        <ctl name="DEC0 MUX" value="ADC1" />
+        <ctl name="ADC1 Volume" value="12" />
+    </path>
+
+<!-- Alternativa adicional por compatibilidad con Lineage 22+ -->
+    <path name="voice-communication">
+    <path name="voice-communication-mic" />
+    </path>
 </mixer>
